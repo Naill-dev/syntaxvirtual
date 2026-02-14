@@ -1,48 +1,61 @@
-// Particles.js fon effekti
+// Particles
 particlesJS("particles-js", {
-  particles: {
-    number: { value: 70, density: { enable: true, value_area: 900 } },
-    color: { value: "#00f2ff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1 } },
-    size: { value: 3.5, random: true },
-    line_linked: { enable: true, distance: 140, color: "#00f2ff", opacity: 0.35, width: 1 },
-    move: { enable: true, speed: 1.8, direction: "none", random: true, straight: false, out_mode: "out" }
-  },
-  interactivity: {
-    detect_on: "canvas",
-    events: {
-      onhover: { enable: true, mode: "grab" },
-      onclick: { enable: true, mode: "push" },
-      resize: true
-    },
-    modes: {
-      grab: { distance: 180, line_linked: { opacity: 0.7 } },
-      push: { particles_nb: 4 }
+    particles: {
+        number: { value: 40 },
+        color: { value: "#00f2ff" },
+        opacity: { value: 0.2 },
+        line_linked: { enable: true, color: "#00f2ff", opacity: 0.1 }
     }
-  },
-  retina_detect: true
 });
 
-// Smooth scroll və active nav link
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
+// Theme Toggle
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
 
-    // Active class idarəsi
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    this.classList.add('active');
+// Multi-language
+const translations = {
+    az: {
+        home: "Ana Səhifə", projects: "Xidmətlər", owner_nav: "Rəhbərlik", contact_nav: "Əlaqə",
+        welcome: "Xoş Gəlmisiniz",
+        hero_title: "Gələcəyin Rəqəmsal Arxitekturası",
+        hero_subtitle: "Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.",
+        start_btn: "Başla",
+        projects_title: "Nələr Edirik?",
+        s1_title: "Xüsusi Proqram Təminatı", s1_desc: "Sizin ehtiyaclarınıza uyğun unikal və miqyaslana bilən veb/mobil sistemlər.",
+        s2_title: "VR/AR Simulyasiyalar", s2_desc: "Təhsil və biznes üçün immersiv virtual reallıq həlləri.",
+        s3_title: "AI İnteqrasiyası", s3_desc: "Süni intellekt və data analitika ilə iş proseslərinin avtomatlaşdırılması.",
+        owner_label: "Platforma Rəhbəri",
+        owner_bio: "SyntaxVirtual-ın yaradıcısı və baş texnoloji memarı. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
+        copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
+    },
+    en: {
+        home: "Home", projects: "Services", owner_nav: "Leadership", contact_nav: "Contact",
+        welcome: "Welcome",
+        hero_title: "Architecting the Digital Future",
+        hero_subtitle: "Stay ahead with AI, VR, and high-performance cloud solutions designed for excellence.",
+        start_btn: "Get Started",
+        projects_title: "Our Services",
+        s1_title: "Custom Software", s1_desc: "Unique and scalable web/mobile systems tailored to your specific needs.",
+        s2_title: "VR/AR Simulations", s2_desc: "Immersive virtual reality solutions for education and corporate training.",
+        s3_title: "AI Integration", s3_desc: "Automating business processes with cutting-edge machine learning and data analytics.",
+        owner_label: "Platform Founder",
+        owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing technological innovations.",
+        copyright: "All rights reserved by Nail Mammadov."
+    }
+};
 
-    // Smooth scroll
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        document.querySelectorAll('[data-lang-key]').forEach(el => {
+            el.textContent = translations[lang][el.dataset.langKey];
+        });
     });
-  });
-});
-
-// Form göndərmə demo (real backend yoxdursa alert)
-document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Mesajınız qəbul olundu! Tezliklə əlaqə saxlayacağıq.');
-  this.reset();
 });
