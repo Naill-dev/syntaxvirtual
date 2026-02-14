@@ -21,8 +21,6 @@ const translations = {
     az: {
         home: "Ana Səhifə", projects: "Xidmətlər", owner_nav: "Rəhbərlik", contact_nav: "Əlaqə",
         welcome: "Xoş Gəlmisiniz",
-        hero_title: "SyntaxVirtual: Digital Architecture & AI",
-        hero_subtitle: "Biz Süni İntellekt (AI), Python proqramlaşdırma və innovativ bulud həlləri vasitəsilə rəqəmsal dünyanı yenidən formalaşdırırıq.",
         hero_title: "Gələcəyin Rəqəmsal Arxitekturası",
         hero_subtitle: "Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.",
         start_btn: "Başla",
@@ -39,8 +37,6 @@ const translations = {
 hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI), Python programming, and innovative cloud solutions.",
         home: "Home", projects: "Services", owner_nav: "Leadership", contact_nav: "Contact",
         welcome: "Welcome",
-           hero_title: "SyntaxVirtual: Digital Architecture & AI",
-        hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI), Python programming, and innovative cloud solutions.",
         start_btn: "Get Started",
         projects_title: "Our Services",
         s1_title: "Custom Software", s1_desc: "Soon.",
