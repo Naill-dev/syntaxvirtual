@@ -39,11 +39,11 @@ const translations = {
         hero_subtitle: "Stay ahead with AI, VR, and high-performance cloud solutions designed for excellence.",
         start_btn: "Get Started",
         projects_title: "Our Services",
-        s1_title: "Custom Software", s1_desc: "Unique and scalable web/mobile systems tailored to your specific needs.",
-        s2_title: "VR/AR Simulations", s2_desc: "Immersive virtual reality solutions for education and corporate training.",
-        s3_title: "AI Integration", s3_desc: "Automating business processes with cutting-edge machine learning and data analytics.",
+        s1_title: "Custom Software", s1_desc: "Soon.",
+        s2_title: "VR/AR Simulations", s2_desc: "Soon.",
+        s3_title: "AI Integration", s3_desc: "Soon.",
         owner_label: "Platform Founder",
-        owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing technological innovations.",
+        owner_bio: "Founder and Chief Architect of SyntaxVirtual.",
         copyright: "All rights reserved by Nail Mammadov."
     }
 };
