@@ -2,7 +2,7 @@
 <html lang="az">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/jpeg" href="faviconn.jpeg">
     
     <title>SyntaxVirtual | AI & Digital Architecture</title>
@@ -20,7 +20,7 @@
       "@type": "ProfessionalService",
       "name": "SyntaxVirtual",
       "url": "https://syntaxvirtual.com",
-      "logo": "https://syntaxvirtual.com/favicon.ico",
+      "logo": "https://syntaxvirtual.com/faviconn.jpeg",
       "founder": {
         "@type": "Person",
         "name": "Nail Mammadov"
@@ -45,9 +45,10 @@
     <nav>
         <div class="logo">Syntax<span>Virtual</span></div>
         <div class="nav-right">
-            <ul class="nav-links">
+            <ul class="nav-links desktop-menu">
                 <li><a href="#home" data-lang-key="home">Ana Səhifə</a></li>
                 <li><a href="#projects" data-lang-key="projects">Xidmətlər</a></li>
+                <li><a href="#insights" data-lang-key="insights_nav">Insights</a></li>
                 <li><a href="#owner" data-lang-key="owner_nav">Rəhbərlik</a></li>
             </ul>
             <div class="controls">
@@ -58,10 +59,22 @@
                     <button class="lang-btn active" data-lang="az">AZ</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
+                <div class="hamburger" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-            <div class="hamburger"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
+
+    <div class="mobile-overlay" id="mobile-menu">
+        <div class="close-menu" id="close-btn">&times;</div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home" data-lang-key="home">Ana Səhifə</a></li>
+            <li><a href="#projects" data-lang-key="projects">Xidmətlər</a></li>
+            <li><a href="#insights" data-lang-key="insights_nav">Insights</a></li>
+            <li><a href="#owner" data-lang-key="owner_nav">Rəhbərlik</a></li>
+        </ul>
+    </div>
 
     <header class="hero" id="home">
         <div class="hero-content">
@@ -92,6 +105,17 @@
                 <div class="card-icon"><i class="fas fa-microchip"></i></div>
                 <h3 data-lang-key="s3_title">AI İnteqrasiyası</h3>
                 <p data-lang-key="s3_desc">Süni intellekt əsaslı avtomatlaşdırma.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights">
+        <h2 data-lang-key="insights_title">Insights & Blog</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-lightbulb"></i></div>
+                <h3 data-lang-key="blog1_title">Tech Trends 2026</h3>
+                <p data-lang-key="blog1_desc">Süni intellektin yeni erasında rəqəmsal transformasiya.</p>
             </div>
         </div>
     </section>
