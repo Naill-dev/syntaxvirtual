@@ -31,6 +31,12 @@ const translations = {
         owner_label: "Platforma Rəhbəri",
         owner_bio: "SyntaxVirtual-ın yaradıcısı və baş texnoloji memarı. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
         copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
+        s1_title: "Xüsusi Proqram Təminatı",
+        s1_desc: "Biznesinizin ehtiyaclarına tam uyğun, miqyaslanan veb və mobil sistemlərin qurulması.",
+        s2_title: "VR/AR Simulyasiyalar",
+        s2_desc: "Təhsil və sənaye üçün immersiv virtual və artırılmış reallıq texnologiyaları.",
+        s3_title: "AI İnteqrasiyası",
+        s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
     },
     en: {
         hero_title: "SyntaxVirtual: Digital Architecture & AI",
@@ -39,9 +45,9 @@ hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI
         welcome: "Welcome",
         start_btn: "Get Started",
         projects_title: "Our Services",
-        s1_title: "Custom Software", s1_desc: "Soon.",
-        s2_title: "VR/AR Simulations", s2_desc: "Soon.",
-        s3_title: "AI Integration", s3_desc: "Soon.",
+     s1_title: "Custom Software", s1_desc: "Unique and scalable web/mobile systems tailored to your business needs.",
+        s2_title: "VR/AR Simulations", s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
+        s3_title: "AI Integration", s3_desc: "Automation of business processes with AI and advanced data analytics.",
         owner_label: "Platform Founder",
         owner_bio: "Founder and Chief Architect of SyntaxVirtual.",
         copyright: "All rights reserved by Nail Mammadov."
