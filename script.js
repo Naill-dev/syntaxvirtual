@@ -21,7 +21,6 @@ const translations = {
     az: {
         home: "Ana Səhifə", 
         projects: "Xidmətlər", 
-        insights_nav: "Insights",
         owner_nav: "Rəhbərlik", 
         contact_nav: "Əlaqə",
         welcome: "Xoş Gəlmisiniz",
@@ -35,10 +34,6 @@ const translations = {
         s2_desc: "Təhsil və sənaye üçün immersiv virtual və artırılmış reallıq texnologiyaları.",
         s3_title: "AI İnteqrasiyası", 
         s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
-        insights_title: "Texnoloji Baxış (Insights)",
-        blog1_title: "Python və AI İnteqrasiyası",
-        blog1_desc: "Süni intellektin biznes proseslərinə tətbiqi və gələcək perspektivləri.",
-        read_more: "Daha çox...",
         owner_label: "Platforma Rəhbəri",
         owner_bio: "SyntaxVirtual-ın yaradıcısı və baş texnoloji memarı. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
         copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
@@ -46,7 +41,6 @@ const translations = {
     en: {
         home: "Home", 
         projects: "Services", 
-        insights_nav: "Insights",
         owner_nav: "Leadership", 
         contact_nav: "Contact",
         welcome: "Welcome",
@@ -60,23 +54,22 @@ const translations = {
         s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
         s3_title: "AI Integration", 
         s3_desc: "Automation of business processes with AI and advanced data analytics.",
-        insights_title: "Tech Insights",
-        blog1_title: "Python & AI Integration",
-        blog1_desc: "The importance of AI integration in modern business and the role of Python.",
-        read_more: "Read more...",
         owner_label: "Platform Founder",
         owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing digital innovations.",
         copyright: "All rights reserved by Nail Mammadov."
     }
 };
 
-// Language Switcher Logic
+// Language Switcher Logic with Meta Data Update
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
+        
+        // Button UI Update
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         
+        // Content Update
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.dataset.langKey;
             if (translations[lang][key]) {
@@ -84,39 +77,12 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
             }
         });
 
-        // Dynamic SEO Update
+        // Dynamic SEO Update for Meta Description
         const metaDesc = document.querySelector('meta[name="description"]');
         if (lang === 'az') {
             metaDesc.setAttribute("content", "SyntaxVirtual - Süni İntellekt, Python proqramlaşdırma və innovativ rəqəmsal həllərin mərkəzi.");
         } else {
             metaDesc.setAttribute("content", "SyntaxVirtual - Global platform for AI, Python programming and digital architecture solutions.");
         }
-    });
-});
-
-// --- NEW: HAMBURGER MENU LOGIC ---
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const closeBtn = document.getElementById('close-btn');
-const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
-
-if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Scrollu dondur
-    });
-}
-
-if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Scrollu aç
-    });
-}
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
     });
 });
