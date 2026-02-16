@@ -1,4 +1,4 @@
-// Particles Background Configuration
+// --- Particles Background Configuration ---
 particlesJS("particles-js", {
     particles: {
         number: { value: 40 },
@@ -8,7 +8,7 @@ particlesJS("particles-js", {
     }
 });
 
-// Theme Toggle (Dark/Light Mode)
+// --- Theme Toggle (Dark/Light Mode) ---
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light-theme');
@@ -16,11 +16,38 @@ themeBtn.addEventListener('click', () => {
     themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
 });
 
-// Multi-language System & SEO Optimizations
+// --- Hamburger Menu Logic ---
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeBtn = document.getElementById('close-btn');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+// Menyu açılması
+hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Arxa fonun sürüşməsini dayandırır
+});
+
+// Menyu bağlanması (X düyməsi ilə)
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Sürüşməni bərpa edir
+});
+
+// Menyu bağlanması (Linklərə basdıqda)
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+});
+
+// --- Multi-language System & SEO ---
 const translations = {
     az: {
         home: "Ana Səhifə", 
         projects: "Xidmətlər", 
+        insights_nav: "Insights",
         owner_nav: "Rəhbərlik", 
         contact_nav: "Əlaqə",
         welcome: "Xoş Gəlmisiniz",
@@ -34,13 +61,17 @@ const translations = {
         s2_desc: "Təhsil və sənaye üçün immersiv virtual və artırılmış reallıq texnologiyaları.",
         s3_title: "AI İnteqrasiyası", 
         s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
+        insights_title: "Insights & Blog",
+        blog1_title: "Tech Trends 2026",
+        blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
         owner_label: "Platforma Rəhbəri",
-        owner_bio: "SyntaxVirtual-ın yaradıcısı və baş texnoloji memarı. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
+        owner_bio: "SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
         copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
     },
     en: {
         home: "Home", 
         projects: "Services", 
+        insights_nav: "Insights",
         owner_nav: "Leadership", 
         contact_nav: "Contact",
         welcome: "Welcome",
@@ -54,13 +85,15 @@ const translations = {
         s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
         s3_title: "AI Integration", 
         s3_desc: "Automation of business processes with AI and advanced data analytics.",
+        insights_title: "Insights & Blog",
+        blog1_title: "Tech Trends 2026",
+        blog1_desc: "Digital transformation in the new era of Artificial Intelligence.",
         owner_label: "Platform Founder",
         owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing digital innovations.",
         copyright: "All rights reserved by Nail Mammadov."
     }
 };
 
-// Language Switcher Logic with Meta Data Update
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
@@ -77,7 +110,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
             }
         });
 
-        // Dynamic SEO Update for Meta Description
+        // Dynamic SEO Update
         const metaDesc = document.querySelector('meta[name="description"]');
         if (lang === 'az') {
             metaDesc.setAttribute("content", "SyntaxVirtual - Süni İntellekt, Python proqramlaşdırma və innovativ rəqəmsal həllərin mərkəzi.");
