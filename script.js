@@ -1,153 +1,121 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // ========== THEME TOGGLE ==========
-    const themeBtn = document.getElementById('themeToggle');
-    const body = document.body;
-
-    function updateThemeIcon() {
-        if (body.classList.contains('light-theme')) {
-            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        } else {
-            themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        }
+// --- Particles Background Configuration ---
+particlesJS("particles-js", {
+    particles: {
+        number: { value: 40 },
+        color: { value: "#00f2ff" },
+        opacity: { value: 0.2 },
+        line_linked: { enable: true, color: "#00f2ff", opacity: 0.1 }
     }
+});
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('light-theme');
-            updateThemeIcon();
-            localStorage.setItem('theme', body.classList.contains('light-theme') ? 'light' : 'dark');
-        });
+// --- Theme Toggle (Dark/Light Mode) ---
+const themeBtn = document.getElementById('theme-toggle');
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    const isLight = document.body.classList.contains('light-theme');
+    themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
 
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
-            body.classList.add('light-theme');
-        } else {
-            body.classList.remove('light-theme');
-        }
-        updateThemeIcon();
-    }
+// --- Hamburger Menu Logic ---
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeBtn = document.getElementById('close-btn');
+const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
 
-    // ========== HAMBURGER MENU ==========
-    const hamburger = document.getElementById('hamburgerBtn');
-    const mobileOverlay = document.getElementById('mobileOverlay');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileLinks = document.querySelectorAll('.mobile-menu a');
+// Menyu açılması
+hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Arxa fonun sürüşməsini dayandırır
+});
 
-    function closeMobile() {
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+// Menyu bağlanması (X düyməsi ilə)
+closeBtn.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = 'auto'; // Sürüşməni bərpa edir
+});
 
-    if (hamburger && mobileOverlay) {
-        hamburger.addEventListener('click', () => {
-            mobileOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-    }
-
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeMobile);
-    }
-
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', closeMobile);
+// Menyu bağlanması (Linklərə basdıqda)
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
     });
+});
 
-    // ========== MULTI-LANGUAGE ==========
-    const translations = {
-        az: {
-            home: 'Ana səhifə',
-            services: 'Xidmətlər',
-            insights: 'Insights',
-            owner: 'Rəhbərlik',
-            welcome: 'Xoş gəlmisiniz',
-            hero_title: 'Gələcəyin rəqəmsal arxitekturası',
-            hero_subtitle: 'Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə aparın.',
-            start_btn: 'Kəşf et',
-            contact_btn: 'Əlaqə',
-            services_title: 'Nələr edirik?',
-            s1_title: 'Proqram təminatı',
-            s1_desc: 'Python və müasir texnologiyalarla biznes həlləri.',
-            s2_title: 'VR/AR simulyasiyalar',
-            s2_desc: 'İmmersiv təcrübələr və təlimlər.',
-            s3_title: 'AI inteqrasiyası',
-            s3_desc: 'Süni intellektlə iş proseslərinin avtomatlaşdırılması.',
-            insights_title: 'Insights & Blog',
-            blog_ai_title: 'Süni intellekt nədir?',
-            blog_ai_desc: 'Əsas anlayışlar, biznesə tətbiqi və real nümunələr.',
-            owner_label: 'Platforma rəhbəri',
-            owner_bio: 'SyntaxVirtual-ın yaradıcısı, rəqəmsal arxitektor. Süni intellekt və proqramlaşdırma sahəsində ekspert.',
-            copyright: 'Bütün hüquqlar qorunur.'
-        },
-        en: {
-            home: 'Home',
-            services: 'Services',
-            insights: 'Insights',
-            owner: 'Leadership',
-            welcome: 'Welcome',
-            hero_title: 'Digital architecture of the future',
-            hero_subtitle: 'Empower your business with AI, VR, and high‑performance cloud solutions.',
-            start_btn: 'Discover',
-            contact_btn: 'Contact',
-            services_title: 'What we do',
-            s1_title: 'Software development',
-            s1_desc: 'Business solutions with Python and modern technologies.',
-            s2_title: 'VR/AR simulations',
-            s2_desc: 'Immersive experiences and training.',
-            s3_title: 'AI integration',
-            s3_desc: 'Automate workflows with artificial intelligence.',
-            insights_title: 'Insights & Blog',
-            blog_ai_title: 'What is AI?',
-            blog_ai_desc: 'Core concepts, business applications, and real‑world examples.',
-            owner_label: 'Platform founder',
-            owner_bio: 'Creator of SyntaxVirtual, digital architect. Expert in AI and software development.',
-            copyright: 'All rights reserved.'
-        }
-    };
+// --- Multi-language System & SEO ---
+const translations = {
+    az: {
+        home: "Ana Səhifə", 
+        projects: "Xidmətlər", 
+        insights_nav: "Insights",
+        owner_nav: "Rəhbərlik", 
+        contact_nav: "Əlaqə",
+        welcome: "Xoş Gəlmisiniz",
+        hero_title: "Gələcəyin Rəqəmsal Arxitekturası",
+        hero_subtitle: "Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.",
+        start_btn: "Başla",
+        projects_title: "Nələr Edirik?",
+        s1_title: "Xüsusi Proqram Təminatı", 
+        s1_desc: "Biznesinizin ehtiyaclarına tam uyğun, miqyaslanan veb və mobil sistemlərin qurulması.",
+        s2_title: "VR/AR Simulyasiyalar", 
+        s2_desc: "Təhsil və sənaye üçün immersiv virtual və artırılmış reallıq texnologiyaları.",
+        s3_title: "AI İnteqrasiyası", 
+        s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
+        insights_title: "Insights & Blog",
+        blog1_title: "Tech Trends 2026",
+        blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
+        owner_label: "Platforma Rəhbəri",
+        owner_bio: "SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor. Texnologiya dünyasında innovasiyaların tətbiqi üzrə mütəxəssis.",
+        copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
+    },
+    en: {
+        home: "Home", 
+        projects: "Services", 
+        insights_nav: "Insights",
+        owner_nav: "Leadership", 
+        contact_nav: "Contact",
+        welcome: "Welcome",
+        hero_title: "SyntaxVirtual: Digital Architecture & AI",
+        hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI), Python programming, and innovative cloud solutions.",
+        start_btn: "Get Started",
+        projects_title: "Our Services",
+        s1_title: "Custom Software", 
+        s1_desc: "Unique and scalable web/mobile systems tailored to your business needs.",
+        s2_title: "VR/AR Simulations", 
+        s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
+        s3_title: "AI Integration", 
+        s3_desc: "Automation of business processes with AI and advanced data analytics.",
+        insights_title: "Insights & Blog",
+        blog1_title: "Tech Trends 2026",
+        blog1_desc: "Digital transformation in the new era of Artificial Intelligence.",
+        owner_label: "Platform Founder",
+        owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing digital innovations.",
+        copyright: "All rights reserved by Nail Mammadov."
+    }
+};
 
-    const langBtns = document.querySelectorAll('.lang-btn');
-    const translatable = document.querySelectorAll('[data-lang]');
-
-    function setLanguage(lang) {
-        // buttons
-        langBtns.forEach(btn => btn.classList.remove('active'));
-        const active = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
-        if (active) active.classList.add('active');
-
-        // text
-        translatable.forEach(el => {
-            const key = el.dataset.lang;
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        
+        // Button UI Update
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Content Update
+        document.querySelectorAll('[data-lang-key]').forEach(el => {
+            const key = el.dataset.langKey;
             if (translations[lang][key]) {
                 el.textContent = translations[lang][key];
             }
         });
 
-        // html lang
-        document.documentElement.lang = lang;
-        localStorage.setItem('preferredLang', lang);
-    }
-
-    langBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const lang = e.target.dataset.lang;
-            setLanguage(lang);
-        });
-    });
-
-    const savedLang = localStorage.getItem('preferredLang') || 'az';
-    setLanguage(savedLang);
-
-    // ========== SMOOTH SCROLL ==========
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-                closeMobile(); // mobil menyu açıq idisə bağla
-            }
-        });
+        // Dynamic SEO Update
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (lang === 'az') {
+            metaDesc.setAttribute("content", "SyntaxVirtual - Süni İntellekt, Python proqramlaşdırma və innovativ rəqəmsal həllərin mərkəzi.");
+        } else {
+            metaDesc.setAttribute("content", "SyntaxVirtual - Global platform for AI, Python programming and digital architecture solutions.");
+        }
     });
 });
