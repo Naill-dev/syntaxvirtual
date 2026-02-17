@@ -250,5 +250,115 @@ footer { padding: 4rem 8%; text-align: center; border-top: 1px solid var(--borde
   color: #fff;
   text-shadow: 0 0 10px var(--glow);
 }
- 
+ /* Insights & Blog bölməsi – Premium görünüş */
+.insights-section {
+  padding: 140px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(10,10,26,0.8), rgba(0,0,0,0.6));
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.8;
+  margin: -1.5rem 0 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: var(--card-bg);
+  border: 1px solid rgba(0,255,255,0.18);
+  box-shadow: var(--glow);
+  transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+  text-decoration: none;
+  color: var(--text);
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+}
+
+.premium-card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 0 80px rgba(0,255,255,0.4);
+}
+
+.card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,26,0.85), transparent 60%);
+}
+
+.card-content {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.card-category {
+  font-size: 0.95rem;
+  color: var(--neon);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.premium-card h3 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.premium-card p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neon);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.premium-card:hover .read-more {
+  color: #fff;
+  transform: translateX(8px);
+}
+
+.coming-soon .card-content {
+  opacity: 0.7;
+}
+
+.coming-soon .read-more {
+  color: #888;
+}
 
