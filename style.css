@@ -187,56 +187,5 @@ footer { padding: 4rem 8%; text-align: center; border-top: 1px solid var(--borde
 
 @media (max-width: 991px) {
     .desktop-menu { display: none !important; }
-    /* Məqalə İzləyicisi */
-#article-viewer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0f172a;
-    z-index: 3000;
-    overflow-y: auto;
-    padding: 40px 20px;
-    display: none; /* Başlanğıcda gizli */
-}
-
-#article-viewer.active {
-    display: block;
-    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-}
-
-.full-article {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #e2e8f0;
-    line-height: 1.8;
-}
-
-.full-article h1 {
-    font-family: 'Orbitron', sans-serif;
-    color: #8b5cf6;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.viewer-controls {
-    max-width: 800px;
-    margin: 0 auto 30px;
-}
-
-#close-article {
-    padding: 10px 20px;
-    border: 1px solid #8b5cf6;
-    background: transparent;
-    color: #8b5cf6;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
+ 
 
