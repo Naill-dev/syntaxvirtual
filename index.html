@@ -6,39 +6,41 @@
     <link rel="icon" type="image/jpeg" href="faviconn.jpeg">
     <title>SyntaxVirtual | AI & Rəqəmsal Arxitektura</title>
     <meta name="description" content="SyntaxVirtual - Süni İntellekt, Python və innovativ rəqəmsal həllər mərkəzi.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
-    <!-- Dinamik fon (gradient) -->
-    <div class="dynamic-bg"></div>
+    <!-- SADƏ FON (gradient) -->
+    <div class="bg-gradient"></div>
 
-    <!-- NAVIGATION -->
+    <!-- NAVİQASİYA (sadə, sabit) -->
     <nav>
-        <div class="logo">Syntax<span>Virtual</span></div>
-        <div class="nav-right">
-            <ul class="nav-links">
+        <div class="nav-container">
+            <div class="logo">Syntax<span>Virtual</span></div>
+            <ul class="nav-menu">
                 <li><a href="#home" data-lang="home">Ana səhifə</a></li>
                 <li><a href="#services" data-lang="services">Xidmətlər</a></li>
                 <li><a href="#insights" data-lang="insights">Insights</a></li>
                 <li><a href="#owner" data-lang="owner">Rəhbərlik</a></li>
             </ul>
-            <div class="controls">
-                <button id="theme-toggle" aria-label="Dəyişdir"><i class="fas fa-moon"></i></button>
-                <div class="lang-switcher">
+            <div class="nav-controls">
+                <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i></button>
+                <div class="lang-group">
                     <button class="lang-btn active" data-lang="az">AZ</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
-                <button class="hamburger" id="hamburger-btn" aria-label="Menyu"><i class="fas fa-bars"></i></button>
+                <button class="hamburger" id="hamburgerBtn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
     </nav>
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="close-menu" id="close-btn">&times;</button>
-        <ul class="mobile-nav">
+    <!-- MOBİL MENU (overlay) -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul class="mobile-menu">
             <li><a href="#home" data-lang="home">Ana səhifə</a></li>
             <li><a href="#services" data-lang="services">Xidmətlər</a></li>
             <li><a href="#insights" data-lang="insights">Insights</a></li>
@@ -52,18 +54,18 @@
             <span class="badge" data-lang="welcome">Xoş gəlmisiniz</span>
             <h1 data-lang="hero_title">Gələcəyin rəqəmsal arxitekturası</h1>
             <p data-lang="hero_subtitle">Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə aparın.</p>
-            <div class="hero-buttons">
+            <div class="hero-btns">
                 <a href="#services" class="btn primary" data-lang="start_btn">Kəşf et</a>
                 <a href="mailto:info@syntaxvirtual.com" class="btn outline" data-lang="contact_btn">Əlaqə</a>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- XİDMƏTLƏR -->
     <section id="services">
         <div class="container">
             <h2 data-lang="services_title">Nələr edirik?</h2>
-            <div class="cards">
+            <div class="grid">
                 <div class="card">
                     <i class="fas fa-code"></i>
                     <h3 data-lang="s1_title">Proqram təminatı</h3>
@@ -87,29 +89,27 @@
     <section id="insights">
         <div class="container">
             <h2 data-lang="insights_title">Insights & Blog</h2>
-            <div class="cards">
+            <div class="grid">
                 <div class="card clickable" onclick="window.location.href='article.html'">
                     <i class="fas fa-brain"></i>
                     <h3 data-lang="blog_ai_title">Süni intellekt nədir?</h3>
                     <p data-lang="blog_ai_desc">Əsas anlayışlar, biznesə tətbiqi və real nümunələr.</p>
-                    <span class="read-time">📅 18 Fev 2026 · 8 dəq</span>
+                    <span class="date">📅 18 Fev 2026 · 8 dəq</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- OWNER -->
+    <!-- RƏHBƏRLİK -->
     <section id="owner">
         <div class="container">
             <div class="owner-card">
-                <div class="owner-info">
-                    <span class="badge" data-lang="owner_label">Platforma rəhbəri</span>
-                    <h2>Nail Mammadov</h2>
-                    <p data-lang="owner_bio">SyntaxVirtual-ın yaradıcısı, rəqəmsal arxitektor. Süni intellekt və proqramlaşdırma sahəsində ekspert.</p>
-                    <div class="socials">
-                        <a href="https://github.com/Naill-dev" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/nail-məmmədov-4a1b21394" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                <span class="badge" data-lang="owner_label">Platforma rəhbəri</span>
+                <h2>Nail Mammadov</h2>
+                <p data-lang="owner_bio">SyntaxVirtual-ın yaradıcısı, rəqəmsal arxitektor. Süni intellekt və proqramlaşdırma sahəsində ekspert.</p>
+                <div class="socials">
+                    <a href="https://github.com/Naill-dev" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nail-məmmədov-4a1b21394" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
@@ -122,6 +122,7 @@
         </div>
     </footer>
 
+    <!-- JS -->
     <script src="script.js"></script>
 </body>
 </html>
