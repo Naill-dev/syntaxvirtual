@@ -1,13 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
-    'use strict';
-
-    // ==================== THEME TOGGLE ====================
-    const themeBtn = document.getElementById('theme-toggle');
+    // ========== THEME TOGGLE ==========
+    const themeBtn = document.getElementById('themeToggle');
     const body = document.body;
 
     function updateThemeIcon() {
-        const isLight = body.classList.contains('light-theme');
-        themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        if (body.classList.contains('light-theme')) {
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
     }
 
     if (themeBtn) {
@@ -17,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', body.classList.contains('light-theme') ? 'light' : 'dark');
         });
 
-        // load saved theme
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             body.classList.add('light-theme');
@@ -27,20 +27,20 @@ document.addEventListener('DOMContentLoaded', function() {
         updateThemeIcon();
     }
 
-    // ==================== MOBILE MENU ====================
-    const hamburger = document.getElementById('hamburger-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const closeBtn = document.getElementById('close-btn');
-    const mobileLinks = document.querySelectorAll('.mobile-nav a');
+    // ========== HAMBURGER MENU ==========
+    const hamburger = document.getElementById('hamburgerBtn');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const closeBtn = document.getElementById('closeBtn');
+    const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
     function closeMobile() {
-        mobileMenu.classList.remove('active');
+        mobileOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    if (hamburger && mobileMenu) {
+    if (hamburger && mobileOverlay) {
         hamburger.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
+            mobileOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     }
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', closeMobile);
     });
 
-    // ==================== MULTI-LANGUAGE ====================
+    // ========== MULTI-LANGUAGE ==========
     const translations = {
         az: {
             home: 'Ana səhifə',
@@ -106,40 +106,38 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const langBtns = document.querySelectorAll('.lang-btn');
-    const translatableElements = document.querySelectorAll('[data-lang]');
+    const translatable = document.querySelectorAll('[data-lang]');
 
     function setLanguage(lang) {
-        // update buttons
+        // buttons
         langBtns.forEach(btn => btn.classList.remove('active'));
-        const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
+        const active = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+        if (active) active.classList.add('active');
 
-        // update text
-        translatableElements.forEach(el => {
+        // text
+        translatable.forEach(el => {
             const key = el.dataset.lang;
             if (translations[lang][key]) {
                 el.textContent = translations[lang][key];
             }
         });
 
-        // update html lang attribute
+        // html lang
         document.documentElement.lang = lang;
         localStorage.setItem('preferredLang', lang);
     }
 
-    // attach event listeners
     langBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            const lang = e.currentTarget.dataset.lang;
+            const lang = e.target.dataset.lang;
             setLanguage(lang);
         });
     });
 
-    // load saved language
     const savedLang = localStorage.getItem('preferredLang') || 'az';
     setLanguage(savedLang);
 
-    // ==================== SMOOTH SCROLL (opsiyonel) ====================
+    // ========== SMOOTH SCROLL ==========
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -148,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (target) {
                 e.preventDefault();
                 target.scrollIntoView({ behavior: 'smooth' });
+                closeMobile(); // mobil menyu açıq idisə bağla
             }
         });
     });
