@@ -129,4 +129,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     console.log("SyntaxVirtual System Initialized | Speed: 235ms");
+    // --- 1. Hamburger Menyu İdarəetməsi ---
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.onclick = () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Scrollu bağla
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Scrollu aç
+        };
+
+        if (closeBtn) closeBtn.onclick = closeMenu;
+
+        mobileLinks.forEach(link => {
+            link.onclick = closeMenu;
+        });
+    }
+
+    // --- 2. Dil İdarəetməsi ---
+    const savedLang = localStorage.getItem('selectedLang') || 'az';
+    applyLanguage(savedLang);
+});
+
+// applyLanguage funksiyan (əvvəlki kimi qalır, amma SEO üçün title yeniləməsi əlavə etdim)
+function applyLanguage(lang) {
+    const selectedLang = translations[lang] ? lang : 'az';
+    document.querySelectorAll('[data-lang-key]').forEach(el => {
+        const key = el.getAttribute('data-lang-key');
+        if (translations[selectedLang][key]) {
+            el.innerHTML = translations[selectedLang][key];
+        }
+    });
+    
+    // SEO Dynamic Update
+    document.documentElement.lang = selectedLang;
+    localStorage.setItem('selectedLang', selectedLang);
+}
 });
