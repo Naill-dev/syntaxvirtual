@@ -1,4 +1,4 @@
-// script.js - Təhlükəsiz versiya (Hissə 1/3)
+// script.js - Təhlükəsiz versiya
 document.addEventListener('DOMContentLoaded', function() {
     
     // ========== PARTICLES.JS ==========
@@ -53,58 +53,59 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
     // ========== MULTI-LANGUAGE SYSTEM ==========
-const translations = {
-    az: {
-        home: "Ana Səhifə",
-        projects: "Xidmətlər",
-        insights_nav: "Insights",
-        owner_nav: "Rəhbərlik",
-        contact_nav: "Əlaqə",
-        welcome: "Xoş Gəlmisiniz",
-        hero_title: "Gələcəyin Rəqəmsal Arxitekturası",
-        hero_subtitle: "Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.",
-        start_btn: "Başla",
-        projects_title: "Nələr Edirik?",
-        s1_title: "Proqram Təminatı",
-        s1_desc: "Python və müasir texnologiyalarla biznes həlləri.",
-        s2_title: "VR/AR Simulyasiyalar",
-        s2_desc: "İmmersiv texnoloji təcrübələr.",
-        s3_title: "AI İnteqrasiyası",
-        s3_desc: "Süni intellekt əsaslı avtomatlaşdırma.",
-        insights_title: "Insights & Blog",
-        blog1_title: "Tech Trends 2026",
-        blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
-        owner_label: "Platforma Rəhbəri",
-        owner_bio: "SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor.",
-        copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
-    },
-    en: {
-        home: "Home",
-        projects: "Services",
-        insights_nav: "Insights",
-        owner_nav: "Leadership",
-        contact_nav: "Contact",
-        welcome: "Welcome",
-        hero_title: "SyntaxVirtual: Digital Architecture & AI",
-        hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI), Python programming, and innovative cloud solutions.",
-        start_btn: "Get Started",
-        projects_title: "Our Services",
-        s1_title: "Custom Software",
-        s1_desc: "Unique and scalable web/mobile systems tailored to your business needs.",
-        s2_title: "VR/AR Simulations",
-        s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
-        s3_title: "AI Integration",
-        s3_desc: "Automation of business processes with AI and advanced data analytics.",
-        insights_title: "Insights & Blog",
-        blog1_title: "Tech Trends 2026",
-        blog1_desc: "Digital transformation in the new era of Artificial Intelligence.",
-        owner_label: "Platform Founder",
-        owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing digital innovations.",
-        copyright: "All rights reserved by Nail Mammadov."
-    }
-};
-    // Dil düymələri və meta teqlər
+    const translations = {
+        az: {
+            home: "Ana Səhifə",
+            projects: "Xidmətlər",
+            insights_nav: "Insights",
+            owner_nav: "Rəhbərlik",
+            contact_nav: "Əlaqə",
+            welcome: "Xoş Gəlmisiniz",
+            hero_title: "Gələcəyin Rəqəmsal Arxitekturası",
+            hero_subtitle: "Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.",
+            start_btn: "Başla",
+            projects_title: "Nələr Edirik?",
+            s1_title: "Proqram Təminatı",
+            s1_desc: "Python və müasir texnologiyalarla biznes həlləri.",
+            s2_title: "VR/AR Simulyasiyalar",
+            s2_desc: "İmmersiv texnoloji təcrübələr.",
+            s3_title: "AI İnteqrasiyası",
+            s3_desc: "Süni intellekt əsaslı avtomatlaşdırma.",
+            insights_title: "Insights & Blog",
+            blog1_title: "Tech Trends 2026",
+            blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
+            owner_label: "Platforma Rəhbəri",
+            owner_bio: "SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor.",
+            copyright: "Bütün hüquqlar Nail Mammadov tərəfindən qorunur."
+        },
+        en: {
+            home: "Home",
+            projects: "Services",
+            insights_nav: "Insights",
+            owner_nav: "Leadership",
+            contact_nav: "Contact",
+            welcome: "Welcome",
+            hero_title: "SyntaxVirtual: Digital Architecture & AI",
+            hero_subtitle: "We reshape the digital world through Artificial Intelligence (AI), Python programming, and innovative cloud solutions.",
+            start_btn: "Get Started",
+            projects_title: "Our Services",
+            s1_title: "Custom Software",
+            s1_desc: "Unique and scalable web/mobile systems tailored to your business needs.",
+            s2_title: "VR/AR Simulations",
+            s2_desc: "Immersive virtual and augmented reality solutions for training and business.",
+            s3_title: "AI Integration",
+            s3_desc: "Automation of business processes with AI and advanced data analytics.",
+            insights_title: "Insights & Blog",
+            blog1_title: "Tech Trends 2026",
+            blog1_desc: "Digital transformation in the new era of Artificial Intelligence.",
+            owner_label: "Platform Founder",
+            owner_bio: "Founder and Chief Architect of SyntaxVirtual. Expert in implementing digital innovations.",
+            copyright: "All rights reserved by Nail Mammadov."
+        }
+    };
+
     const langBtns = document.querySelectorAll('.lang-btn');
     const metaDesc = document.querySelector('meta[name="description"]');
     const metaKeywords = document.querySelector('meta[name="keywords"]');
@@ -112,7 +113,8 @@ const translations = {
     function setLanguage(lang) {
         // Düymələri yenilə
         langBtns.forEach(btn => btn.classList.remove('active'));
-        document.querySelector(.lang-btn[data-lang="${lang}"]).classList.add('active');
+        const activeBtn = document.querySelector(`.lang-btn[data-lang="${lang}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
 
         // Məzmunu yenilə
         document.querySelectorAll('[data-lang-key]').forEach(el => {
@@ -147,4 +149,4 @@ const translations = {
     const savedLang = localStorage.getItem('preferredLang') || 'az';
     setLanguage(savedLang);
 
-}); // DOMContentLoaded sonu
+});
