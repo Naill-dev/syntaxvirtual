@@ -187,5 +187,68 @@ footer { padding: 4rem 8%; text-align: center; border-top: 1px solid var(--borde
 
 @media (max-width: 991px) {
     .desktop-menu { display: none !important; }
+    /* Insights & Blog bölməsi */
+.insights-section {
+  padding: 120px 60px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.insight-card {
+  background: var(--card-bg);
+  border: 1px solid var(--neon);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-decoration: none;
+  color: var(--text);
+  box-shadow: var(--glow);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 0 60px var(--neon);
+}
+
+.insight-icon {
+  font-size: 3.5rem;
+  color: var(--neon);
+  margin-bottom: 1.5rem;
+}
+
+.insight-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--neon);
+}
+
+.insight-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.insight-card:hover .read-more {
+  color: #fff;
+  text-shadow: 0 0 10px var(--glow);
+}
  
 
