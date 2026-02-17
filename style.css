@@ -275,16 +275,4 @@ footer { padding: 4rem 8%; text-align: center; border-top: 1px solid var(--borde
     cursor: pointer;
     transition: all 0.3s ease;
 }
-    .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 242, 255, 0.2);
-}
-.card .card-icon {
-    transition: transform 0.5s ease;
-}
-.card:hover .card-icon {
-    transform: rotate(360deg);
-}
+    
