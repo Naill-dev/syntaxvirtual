@@ -62,6 +62,8 @@ const translations = {
         s3_title: "AI İnteqrasiyası", 
         s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
         insights_title: "Insights & Blog",
+        blog_ai_title: "Süni intellekt nədir?",
+    blog_ai_desc: "AI əsasları, biznesə tətbiqi və real nümunələr."
         blog1_title: "Tech Trends 2026",
         blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
         owner_label: "Platforma Rəhbəri",
@@ -86,6 +88,9 @@ const translations = {
         s3_title: "AI Integration", 
         s3_desc: "Automation of business processes with AI and advanced data analytics.",
         insights_title: "Insights & Blog",
+         blog_ai_title: "What is AI?",
+    blog_ai_desc: "AI basics, business applications, and real-world examples."
+}
         blog1_title: "Tech Trends 2026",
         blog1_desc: "Digital transformation in the new era of Artificial Intelligence.",
         owner_label: "Platform Founder",
