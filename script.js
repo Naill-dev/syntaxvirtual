@@ -108,7 +108,8 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
             if (translations[lang][key]) {
                 el.textContent = translations[lang][key];
             }
-       
+        });
+
         // Dynamic SEO Update
         const metaDesc = document.querySelector('meta[name="description"]');
         if (lang === 'az') {
@@ -117,15 +118,4 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
             metaDesc.setAttribute("content", "SyntaxVirtual - Global platform for AI, Python programming and digital architecture solutions.");
         }
     });
-function openArticle(type) {
-    if(type === 'ethics') {
-        // Məqaləni açan funksiyanı bura bağla
-        document.getElementById('article-overlay').classList.add('open');
-    } else if(type === 'trends') {
-        // Əgər fərqli səhifədirsə:
-        window.location.href = 'trends.html';
-    }
-}
-         });
-
-
+});
