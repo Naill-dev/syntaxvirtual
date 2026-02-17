@@ -118,4 +118,24 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
             metaDesc.setAttribute("content", "SyntaxVirtual - Global platform for AI, Python programming and digital architecture solutions.");
         }
     });
+    document.addEventListener('DOMContentLoaded', () => {
+    const articleCard = document.getElementById('ai-ethics-card');
+    const articleViewer = document.getElementById('article-viewer');
+    const closeBtn = document.getElementById('close-article');
+
+    if (articleCard && articleViewer) {
+        // Məqaləni aç
+        articleCard.onclick = () => {
+            articleViewer.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Ana səhifəni dondur
+        };
+
+        // Bağla
+        closeBtn.onclick = () => {
+            articleViewer.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Ana səhifəni geri qaytar
+        };
+    }
 });
+});
+
