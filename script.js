@@ -62,7 +62,7 @@ const translations = {
         s3_title: "AI İnteqrasiyası", 
         s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
         insights_title: "Insights & Blog",
-         const  blog_ai_title: "Süni intellekt nədir?",
+         const blog_ai_title: "Süni intellekt nədir?",
            blog_ai_desc: "AI əsasları, biznesə tətbiqi və real nümunələr.",
         const blog1_title: "Tech Trends 2026",
         blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
