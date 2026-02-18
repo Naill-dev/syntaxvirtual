@@ -336,4 +336,65 @@
         <div class="share-buttons">
             <a href="#" class="share-btn" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent(window.location.href), '_blank'); return false;"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="share-btn" onclick="window.open('https://twitter.com/intent/tweet?url='+encodeURIComponent(window.location.href)+'&text=Süni%20intellekt%20nədir%3F', '_blank'); return false;"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" class="share-btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href), '_blank'); r
+            <a href="#" class="share-btn" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href), '_blank'); return false;"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="share-btn" onclick="window.open('https://t.me/share/url?url='+encodeURIComponent(window.location.href)+'&text=Süni%20intellekt%20nədir%3F', '_blank'); return false;"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer (eyni) -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>SyntaxVirtual</strong>. <span data-lang-key="copyright">Bütün hüquqlar Nail Mammadov tərəfindən qorunur.</span></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Məqalə səhifəsi üçün xüsusi dil idarəsi
+        // (Ana səhifədəki dil sistemini genişləndirir)
+        (function() {
+            // Dil düymələrini seç
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const azContent = document.getElementById('content-az');
+            const enContent = document.getElementById('content-en');
+            const azTitle = document.getElementById('article-title-az');
+            const enTitle = document.getElementById('article-title-en');
+            const htmlTag = document.documentElement;
+
+            // Yadda saxlanılan dili yoxla (localStorage)
+            const savedLang = localStorage.getItem('preferredLang') || 'az';
+            setLanguage(savedLang);
+
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.dataset.lang;
+                    setLanguage(lang);
+                    localStorage.setItem('preferredLang', lang);
+                });
+            });
+
+            function setLanguage(lang) {
+                // Düymələri yenilə
+                langBtns.forEach(b => b.classList.remove('active'));
+                document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+
+                // Məzmunu göstər/gizlət
+                if (lang === 'az') {
+                    azContent.classList.add('active');
+                    enContent.classList.remove('active');
+                    azTitle.style.display = 'block';
+                    enTitle.style.display = 'none';
+                    htmlTag.lang = 'az';
+                } else {
+                    enContent.classList.add('active');
+                    azContent.classList.remove('active');
+                    enTitle.style.display = 'block';
+                    azTitle.style.display = 'none';
+                    htmlTag.lang = 'en';
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
