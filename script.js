@@ -63,7 +63,7 @@ const translations = {
         s3_desc: "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
         insights_title: "Insights & Blog",
            blog_ai_title: "Süni intellekt nədir?",
-    blog_ai_desc: "AI əsasları, biznesə tətbiqi və real nümunələr."
+           blog_ai_desc: "AI əsasları, biznesə tətbiqi və real nümunələr."
         blog1_title: "Tech Trends 2026",
         blog1_desc: "Süni intellektin yeni erasında rəqəmsal transformasiya.",
         owner_label: "Platforma Rəhbəri",
