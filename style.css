@@ -13,8 +13,8 @@
 body.light-theme {
     --bg: #f4f7f6;
     --surface: #ffffff;
-    --text: #1a202c;
-    --text-dim: #4a5568;
+    --text: #0b1e2e;        /* Tündləşdirildi – aydın oxunma üçün */
+    --text-dim: #1e3a5f;     /* Tündləşdirildi – aydın oxunma üçün */
     --border: rgba(0, 0, 0, 0.1);
     --shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
@@ -292,25 +292,7 @@ h2 {
 .read-meta {
     opacity: 0.8;
 }
-/* Article Page Enhancements */
-.article-content h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--primary);
-    margin-top: 0.5rem;
-}
-.article-content .highlight {
-    background: linear-gradient(145deg, var(--surface), transparent);
-}
-.read-meta {
-    opacity: 0.8;
-}
-.card {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+
 /* ========== OWNER ========== */
 .owner-card {
     background: var(--surface);
@@ -359,30 +341,29 @@ footer {
 }
 
 /* ========== MƏQALƏ SƏHİFƏSİ (ARTICLE) ========== */
-.article-wrapper {
-    max-width: 900px;
+.article-container {
+    max-width: 800px;
     margin: 120px auto 60px;
     padding: 0 20px;
 }
 
 .article-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .article-header h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.8rem, 5vw, 3rem);
     color: var(--primary);
     margin-bottom: 20px;
-    overflow-wrap: break-word;
     word-break: break-word;
 }
 
 .article-meta {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
     color: var(--text-dim);
     font-size: 0.95rem;
     flex-wrap: wrap;
@@ -396,16 +377,14 @@ footer {
 .article-content {
     line-height: 1.8;
     font-size: 1.1rem;
-    overflow-wrap: break-word;
     word-break: break-word;
 }
 
 .article-content h2 {
     font-size: 2rem;
     margin: 3rem 0 1.5rem;
-    text-align: left;
     color: var(--primary);
-    overflow-wrap: break-word;
+    text-align: left;
     word-break: break-word;
 }
 
@@ -421,7 +400,6 @@ footer {
 .article-content p {
     margin-bottom: 1.8rem;
     color: var(--text-dim);
-    overflow-wrap: break-word;
     word-break: break-word;
 }
 
@@ -439,16 +417,15 @@ footer {
     color: var(--primary);
 }
 
-.article-content .highlight-box {
+.highlight-box {
     background: var(--surface);
     padding: 2rem;
     border-radius: 16px;
     border: 1px solid var(--border);
     margin: 2rem 0;
-    background: linear-gradient(145deg, var(--surface), transparent);
 }
 
-.back-link {
+.back-home {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -463,7 +440,7 @@ footer {
     transition: 0.2s;
 }
 
-.back-link:hover {
+.back-home:hover {
     border-color: var(--primary);
     background: rgba(0, 242, 255, 0.05);
 }
@@ -527,7 +504,7 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .article-wrapper {
+    .article-container {
         padding: 0 15px;
     }
     .article-content h2 {
@@ -537,25 +514,28 @@ footer {
         font-size: 1rem;
         line-height: 1.7;
     }
-    .back-link {
+    .back-home {
         width: 100%;
         justify-content: center;
     }
 }
 
-/* ========== DARK THEME GÜCLƏNDİRMƏ ========== */
-body.dark-theme .article-content p,
-body.dark-theme .article-content li {
-    color: #e0e7ff;
-}
-
-/* ========== ƏLAVƏ TƏHLÜKƏSİZLİK (overflow) ========== */
-body,
-html {
+/* ========== TƏHLÜKƏSİZLİK ========== */
+html, body {
     overflow-x: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+/* ========== LIGHT MODE AYDINLIQ ƏLAVƏLƏRİ ========== */
+body.light-theme .article-content p,
+body.light-theme .article-content li {
+    color: #0b1e2e !important;  /* Tünd göy rəng – aydın oxunur */
+}
+
+body.light-theme .highlight-box {
+    background: #e6f0fa;         /* Açıq mavi fon – kontrast artır */
+    border-color: var(--primary);
+}
+
+body.light-theme .article-content h2 {
+    color: #005f6b;              /* Tünd firuzə – daha aydın */
 }
