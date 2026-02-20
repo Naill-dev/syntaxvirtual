@@ -1075,3 +1075,123 @@ body.dark-theme .article-meta {
     background: var(--primary);
     color: #000;
 }
+
+/* ========== LIGHT MODA XÜSUSİ DÜZƏLİŞLƏR – OXUNAQLIQ ARTIRMA ========== */
+body.light-theme {
+    /* Əsas mətn rənglərini tündləşdir */
+    --text: #0b1e2e;           /* tünd göy – əla kontrast */
+    --text-dim: #1e3a5f;       /* tünd, aydın oxunan */
+}
+
+/* Bütün mətn elementləri üçün gücləndirilmiş rəng */
+body.light-theme p,
+body.light-theme .card p,
+body.light-theme .article-content p,
+body.light-theme .hero p,
+body.light-theme .owner-info p,
+body.light-theme .footer-bottom {
+    color: #0b1e2e !important;        /* tünd göy – maksimum kontrast */
+}
+
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme .card h3,
+body.light-theme .owner-info h3 {
+    color: #0a1a2a !important;        /* daha tünd – başlıqlar üçün */
+}
+
+body.light-theme .badge {
+    color: #005f8c;                    /* tünd mavi – badge üçün */
+    background: rgba(0, 95, 140, 0.1);
+}
+
+body.light-theme .read-meta {
+    color: #005f8c !important;         /* tarixlər üçün tünd mavi */
+}
+
+body.light-theme .btn-outline {
+    color: #005f8c;                    /* outline düymə rəngi */
+    border-color: #005f8c;
+}
+
+body.light-theme .btn-outline:hover {
+    background: #005f8c;
+    color: white;
+}
+
+body.light-theme .article-meta {
+    color: #1e3a5f;                    /* meta məlumatlar (tarix, müəllif) */
+}
+
+body.light-theme .article-meta i {
+    color: #005f8c;                    /* iconlar üçün */
+}
+
+body.light-theme .back-link {
+    color: #005f8c;
+    border-color: rgba(0, 95, 140, 0.3);
+}
+
+body.light-theme .back-link:hover {
+    background: rgba(0, 95, 140, 0.1);
+}
+
+/* Xüsusi olaraq məqalə səhifəsi üçün */
+body.light-theme .article-content p,
+body.light-theme .article-content li {
+    color: #0b1e2e !important;
+}
+
+body.light-theme .article-content h2 {
+    color: #003f6f !important;         /* daha tünd mavi */
+}
+
+body.light-theme .article-content h2::after {
+    background: #005f8c;                /* mavi xətt */
+}
+
+body.light-theme .highlight-box {
+    background: #e6f0fa;                /* açıq mavi fon */
+    border-left-color: #005f8c;
+}
+
+/* Sosial media ikonları üçün */
+body.light-theme .socials a {
+    color: #1e3a5f;
+    border-color: rgba(0, 95, 140, 0.2);
+}
+
+body.light-theme .socials a:hover {
+    color: #005f8c;
+    border-color: #005f8c;
+}
+
+/* Paylaşım düymələri üçün */
+body.light-theme .share-section {
+    background: #ffffff;
+    border-color: rgba(0, 95, 140, 0.2);
+}
+
+body.light-theme .share-title {
+    color: #005f8c;
+}
+
+body.light-theme .modern-share-btn {
+    background: #f0f5fa;
+    border-color: rgba(0, 95, 140, 0.2);
+    color: #1e3a5f;
+}
+
+body.light-theme .modern-share-btn:hover {
+    color: white;
+}
+
+/* Mobil menyu üçün */
+body.light-theme .mobile-nav-links a {
+    color: #0b1e2e;
+}
+
+body.light-theme .mobile-nav-links a:hover {
+    color: #005f8c;
+}
