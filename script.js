@@ -103,7 +103,6 @@ const translations = {
         s3_title:      "AI Integration",
         s3_desc:       "Automation of business processes with AI and advanced data analytics.",
         insights_title: "Insights & Blog",
-        blog_agentic_title: "2026: Agentic AI, RAG, Vibecoding", blog_agentic_desc: "Agents, RAG, security, and future trends." },
         blog_ai_programming_title: "2026: AI + Programming", 
         blog_ai_programming_desc: "Agents, RAG, vibe coding, and new trends.",
         blog_ai_5_title: "Business problems + AI",
