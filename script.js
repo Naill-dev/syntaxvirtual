@@ -11,24 +11,26 @@ particlesJS("particles-js", {
 // --- Theme Toggle (Dark/Light Mode) with persistence ---
 const themeBtn = document.getElementById('theme-toggle');
 
-// Saxlanmış theme-i yüklə (default: dark)
-const savedTheme = localStorage.getItem('theme') || 'dark';
-if (savedTheme === 'light') {
-    document.body.classList.add('light-theme');
-}
-themeBtn.innerHTML = savedTheme === 'light' 
-    ? '<i class="fas fa-sun"></i>' 
-    : '<i class="fas fa-moon"></i>';
+if (themeBtn) {
+    // Saxlanmış theme-i yüklə (default: dark)
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    }
+    themeBtn.innerHTML = savedTheme === 'light' 
+        ? '<i class="fas fa-sun"></i>' 
+        : '<i class="fas fa-moon"></i>';
 
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    const isLight = document.body.classList.contains('light-theme');
-    
-    themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    
-    // Saxla
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-});
+    themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const isLight = document.body.classList.contains('light-theme');
+        
+        themeBtn.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        
+        // Saxla
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+}
 
 // --- Hamburger Menu Logic ---
 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -36,20 +38,26 @@ const mobileMenu   = document.getElementById('mobile-menu');
 const closeBtn     = document.getElementById('close-btn');
 const mobileLinks  = document.querySelectorAll('.mobile-nav-links a');
 
-hamburgerBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.add('active');
-    document.body.style.overflow = 'hidden';
-});
+if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+}
 
-closeBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
+if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+}
 
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
-        mobileMenu?.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        if (mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
     });
 });
 
@@ -73,8 +81,10 @@ const translations = {
         s3_title:      "AI İnteqrasiyası",
         s3_desc:       "Süni intellekt və qabaqcıl data analitika vasitəsilə iş proseslərinin avtomatlaşdırılması.",
         insights_title: "Insights & Blog",
-        blog_agentic_title: "2026: Agentik AI, RAG, Vibecoding", blog_agentic_desc: "Agentlər, RAG, təhlükəsizlik və gələcək trendlər." },
-        blog_ai_programming_title: "2026: AI + Proqramlaşdırma", blog_ai_programming_desc: "Agentlər, RAG, vibecoding və yeni trendlər.",
+        blog_agentic_title: "2026: Agentik AI, RAG, Vibecoding",
+        blog_agentic_desc: "Agentlər, RAG, təhlükəsizlik və gələcək trendlər.",
+        blog_ai_programming_title: "2026: AI + Proqramlaşdırma",
+        blog_ai_programming_desc: "Agentlər, RAG, vibecoding və yeni trendlər.",
         blog_ai_5_title: "Biznes problemləri + AI", 
         blog_ai_5_desc: "5 addımda biznes problemlərini AI ilə həll et.",
         blog_ai_title: "Süni intellekt nədir?",
@@ -103,6 +113,8 @@ const translations = {
         s3_title:      "AI Integration",
         s3_desc:       "Automation of business processes with AI and advanced data analytics.",
         insights_title: "Insights & Blog",
+        blog_agentic_title: "2026: Agentic AI, RAG, Vibecoding",
+        blog_agentic_desc: "Agents, RAG, security, and future trends.",
         blog_ai_programming_title: "2026: AI + Programming", 
         blog_ai_programming_desc: "Agents, RAG, vibe coding, and new trends.",
         blog_ai_5_title: "Business problems + AI",
@@ -124,7 +136,7 @@ let currentLang = localStorage.getItem('lang') || 'az';
 function applyLanguage(lang) {
     document.querySelectorAll('[data-lang-key]').forEach(el => {
         const key = el.dataset.langKey;
-        if (translations[lang]?.[key]) {
+        if (translations[lang] && translations[lang][key]) {
             el.textContent = translations[lang][key];
         }
     });
