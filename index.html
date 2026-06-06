@@ -1,176 +1,40 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WR3X1Z2G1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8WR3X1Z2G1');
-</script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/jpeg" href="faviconn.jpeg">
-    
-    <title>SyntaxVirtual | AI & Digital Architecture</title>
-    <meta name="google-site-verification" content="TQ3DONsmofg591WaulJcB826cJLNfNPbviDbasDKcZ8" />
-    <meta name="description" content="SyntaxVirtual - Süni İntellekt (AI), Python proqramlaşdırma və innovativ rəqəmsal arxitektura həlləri. Nail Məmmədov tərəfindən qurulan texnologiya platforması.">
-    <meta name="keywords" content="SyntaxVirtual, AI Azerbaijan, Süni İntellekt, Digital Architecture, Python proqramlaşdırma, Software Solutions, Nail Mammadov, Tech Startup Baku">
-    
-    <link rel="alternate" hreflang="az" href="https://syntaxvirtual.com/" />
-    <link rel="alternate" hreflang="en" href="https://syntaxvirtual.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://syntaxvirtual.com/" />
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "SyntaxVirtual",
-      "url": "https://syntaxvirtual.com",
-      "logo": "https://syntaxvirtual.com/faviconn.jpeg",
-      "founder": {
-        "@type": "Person",
-        "name": "Nail Mammadov"
-      },
-      "description": "Süni İntellekt, Python proqramlaşdırma və innovativ rəqəmsal həllərin mərkəzi.",
-      "serviceType": ["AI Integration", "Python Development", "Cloud Solutions"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "AZ"
-      }
-    }
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texniki Yenilənmə | SyntaxVirtual</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a0e17;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container { max-width: 600px; padding: 20px; }
+        h1 { color: #06b6d4; font-size: 2.5rem; margin-bottom: 20px; }
+        p { color: #94a3b8; font-size: 1.2rem; line-height: 1.6; }
+        .badge { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            border: 1px solid #06b6d4; 
+            border-radius: 8px; 
+            color: #06b6d4; 
+            margin-top: 20px; 
+        }
+    </style>
 </head>
-
-<body class="dark-theme">
-    <div id="particles-js"></div>
-
-    <nav>
-        <div class="logo">Syntax<span>Virtual</span></div>
-        <div class="nav-right">
-            <ul class="nav-links desktop-menu">
-                <li><a href="#home" data-lang-key="home">Ana Səhifə</a></li>
-                <li><a href="#projects" data-lang-key="projects">Xidmətlər</a></li>
-                <li><a href="#insights" data-lang-key="insights_nav">Insights</a></li>
-                <li><a href="#owner" data-lang-key="owner_nav">Rəhbərlik</a></li>
-            </ul>
-            <div class="controls">
-                <button id="theme-toggle" title="Mode Switcher">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang="az">AZ</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                </div>
-                <div class="hamburger" id="hamburger-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="mobile-overlay" id="mobile-menu">
-        <div class="close-menu" id="close-btn">&times;</div>
-        <ul class="mobile-nav-links">
-            <li><a href="#home" data-lang-key="home">Ana Səhifə</a></li>
-            <li><a href="#projects" data-lang-key="projects">Xidmətlər</a></li>
-            <li><a href="#insights" data-lang-key="insights_nav">Insights</a></li>
-            <li><a href="#owner" data-lang-key="owner_nav">Rəhbərlik</a></li>
-        </ul>
-    </div>
-
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="badge" data-lang-key="welcome">Xoş Gəlmisiniz</div>
-            <h1 data-lang-key="hero_title">Gələcəyin Rəqəmsal Arxitekturası</h1>
-            <p data-lang-key="hero_subtitle">Süni intellekt, VR və yüksək performanslı bulud həlləri ilə biznesinizi bir addım öndə tutun.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary" data-lang-key="start_btn">Başla</a>
-                <a href="mailto:info@syntaxvirtual.com" class="btn btn-outline" data-lang-key="contact_nav">Əlaqə</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="projects">
-        <h2 data-lang-key="projects_title">Nələr Edirik?</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-code"></i></div>
-                <h3 data-lang-key="s1_title">Proqram Təminatı</h3>
-                <p data-lang-key="s1_desc">Python və müasir texnologiyalarla biznes həlləri.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-vr-cardboard"></i></div>
-                <h3 data-lang-key="s2_title">VR/AR Simulyasiyalar</h3>
-                <p data-lang-key="s2_desc">İmmersiv texnoloji təcrübələr.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                <h3 data-lang-key="s3_title">AI İnteqrasiyası</h3>
-                <p data-lang-key="s3_desc">Süni intellekt əsaslı avtomatlaşdırma.</p>
-            </div>
-        </div>
-    </section>
-
-   <!-- Insights & Blog -->
-<section id="insights">
-    <h2 data-lang-key="insights_title">Insights & Blog</h2>
-    <div class="grid">
-        
-        <div class="card" onclick="location.href='article-agentic-ai-2026.html';" style="cursor: pointer;">
-    <i class="fas fa-robot"></i>
-    <h3 data-lang-key="blog_agentic_title">2026: Agentik AI, RAG, Vibecoding</h3>
-    <p data-lang-key="blog_agentic_desc">Agentlər, RAG, təhlükəsizlik və gələcək trendlər.</p>
-    <span class="read-meta">📅 28 Fev 2026</span>
-</div>
-        
-        
-        <!-- Kart 1: 2026: AI + Proqramlaşdırma -->
-        <div class="card" onclick="location.href='article-pro.html';" style="cursor: pointer;">
-            <i class="fas fa-robot card-icon"></i>
-            <h3 data-lang-key="blog_ai_programming_title">2026: AI + Proqramlaşdırma</h3>
-            <p data-lang-key="blog_ai_programming_desc">Agentlər, RAG, vibecoding və yeni trendlər.</p>
-            <span class="read-meta">📅 23 Fev 2026</span>
-        </div>
-        
-        <!-- Kart 2: Biznes problemləri + AI -->
-        <div class="card" onclick="location.href='ai-etikasi.html';" style="cursor: pointer;">
-            <i class="fas fa-briefcase card-icon"></i>
-            <h3 data-lang-key="blog_business_title">Biznes problemləri + AI</h3>
-            <p data-lang-key="blog_business_desc">5 addımda biznes problemlərini AI ilə həll et.</p>
-            <span class="read-meta">📅 20 Fev 2026</span>
-        </div>
-        
-        <!-- Kart 3: Süni intellekt nədir? -->
-        <div class="card" onclick="location.href='article.html';" style="cursor: pointer;">
-            <i class="fas fa-brain card-icon"></i>
-            <h3 data-lang-key="blog_ai_title">Süni intellekt nədir?</h3>
-            <p data-lang-key="blog_ai_desc">AI əsasları, biznesə tətbiqi və real nümunələr.</p>
-            <span class="read-meta">📅 18 Fev 2026</span>
-        </div>
-        
-        <!-- Kart 4: Tech Trends 2026 -->
-        <div class="card" onclick="location.href='';" style="cursor: pointer;">
-            <i class="fas fa-chart-line card-icon"></i>
-            <h3 data-lang-key="blog_trends_title">Tech Trends 2026</h3>
-            <p data-lang-key="blog_trends_desc">Süni intellektin yeni erasında rəqəmsal transformasiya.</p>
-            <span class="read-meta">📅 15 Fev 2026</span>
-        </div>
-        
-        <!-- Kart 5: SyntaxVirtual vizyonu -->
-        <div class="card" onclick="location.href='syntax-vision.html';" style="cursor: pointer;">
-            <i class="fas fa-eye card-icon"></i>
-            <h3 data-lang-key="blog_syntax_title">SyntaxVirtual vizyonu</h3>
-            <p data-lang-key="blog_syntax_desc">Süni intellekt və rəqəmsal transformasiyada SyntaxVirtual yanaşması.</p>
-            <span class="read-meta">📅 20 Fev 2026</span>
-        </div>
-        
+<body>
+    <div class="container">
+        <h1>SyntaxVirtual</h1>
+        <p>Daha müasir və sürətli bir təcrübə üçün sistemi yeniləyirik. Qısa müddət sonra yenidən qarşınızda olacağıq.</p>
+        <div class="badge">🛠 Texniki baxış rejimindədir</div>
     </div>
    <section id="owner">
         <div class="owner-card">
