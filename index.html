@@ -4,58 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texniki Yenilənmə | SyntaxVirtual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
         body {
             margin: 0;
             padding: 0;
             background-color: #0a0e17;
             color: white;
-            font-family: sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
+            overflow: hidden;
         }
-        .container { max-width: 600px; padding: 20px; }
-        h1 { color: #06b6d4; font-size: 2.5rem; margin-bottom: 20px; }
-        p { color: #94a3b8; font-size: 1.2rem; line-height: 1.6; }
-        .badge { 
-            display: inline-block; 
-            padding: 10px 20px; 
-            border: 1px solid #06b6d4; 
-            border-radius: 8px; 
+        .container { 
+            max-width: 600px; 
+            padding: 20px; 
+            z-index: 10;
+        }
+        h1 { 
             color: #06b6d4; 
-            margin-top: 20px; 
+            font-size: 3rem; 
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+        }
+        p { 
+            color: #94a3b8; 
+            font-size: 1.25rem; 
+            line-height: 1.7; 
+            margin-bottom: 30px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 2px solid #06b6d4;
+            border-radius: 50px;
+            color: #06b6d4;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        .owner-card {
+            margin-top: 60px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            max-width: 380px;
+        }
+        .owner-info h3 {
+            margin: 15px 0 8px;
+            color: #06b6d4;
+        }
+        .socials a {
+            color: #94a3b8;
+            font-size: 1.6rem;
+            margin: 0 12px;
+            transition: all 0.3s;
+        }
+        .socials a:hover {
+            color: #06b6d4;
+            transform: translateY(-3px);
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px 0;
+            color: #64748b;
+            font-size: 0.95rem;
         }
     </style>
 </head>
-<br>
+<body>
     <div class="container">
         <h1>SyntaxVirtual</h1>
-        <p>Daha müasir və sürətli bir təcrübə üçün sistemi yeniləyirik. Qısa müddət sonra yenidən qarşınızda olacağıq.</p>
+        <p>Daha müasir və sürətli bir təcrübə üçün sistemi yeniləyirik.<br>
+        Qısa müddət sonra yenidən qarşınızda olacağıq.</p>
         <div class="badge">🛠 Texniki baxış rejimindədir</div>
     </div>
-   <section id="owner">
+
+    <section id="owner">
         <div class="owner-card">
             <div class="owner-info">
-                <span class="label" data-lang-key="owner_label">Platforma Rəhbəri</span>
+                <span class="label">Platforma Rəhbəri</span>
                 <h3>Nail Mammadov</h3>
-                <p data-lang-key="owner_bio">SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor.</p>
+                <p>SyntaxVirtual-ın yaradıcısı və rəqəmsal arxitektor.</p>
                 <div class="socials">
-                    <a href="https://github.com/Naill-dev"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/nail-məmmədov-4a1b21394"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Naill-dev" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/nail-məmmədov-4a1b21394" target="_blank"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="footer-bottom">
-            <p>&copy; 2026 <strong>SyntaxVirtual</strong>. <span data-lang-key="copyright">Bütün hüquqlar Nail Mammadov tərəfindən qorunur.</span></p>
+            <p>&copy; 2026 <strong>SyntaxVirtual</strong>. Bütün hüquqlar Nail Mammadov tərəfindən qorunur.</p>
         </div>
     </footer>
 
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        particlesJS("body", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#06b6d4" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#06b6d4",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" },
+                    "resize": true
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
