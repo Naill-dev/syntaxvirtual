@@ -1,124 +1,133 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntaxVirtual | Rəqəmsal İnnovasiya Platforması</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <!-- CSS faylınız -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SyntaxVirtual | Premium Digital Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Arxa fondakı hərəkətli parıltı (Ambient Glow) -->
-    <div class="ambient-glow"></div>
+<div class="ambient-glow">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
 
-    <!-- Particles.js Arxa Fonu -->
-    <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-    <!-- NAVİQASİYA -->
-    <nav>
-        <div class="logo">Syntax<span>Virtual</span></div>
-        <div class="nav-right">
-            <ul class="nav-links desktop-menu">
-                <li><a href="#hero">Ana Səhifə</a></li>
-                <li><a href="#about">Haqqımızda</a></li>
-                <li><a href="#services">Xidmətlər</a></li>
-                <li><a href="#contact">Əlaqə</a></li>
-            </ul>
-            <div class="controls">
-                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-                <div class="lang-switcher">
-                    <button class="lang-btn active">AZ</button>
-                    <button class="lang-btn">EN</button>
-                </div>
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </div>
-    </nav>
+<header class="navbar">
+  <a class="logo" href="#">Syntax<span>Virtual</span></a>
 
-    <!-- MOBİL MENYU -->
-    <div class="mobile-overlay">
-        <div class="close-menu"><i class="fas fa-times"></i></div>
-        <ul class="mobile-nav-links">
-            <li><a href="#hero">Ana Səhifə</a></li>
-            <li><a href="#about">Haqqımızda</a></li>
-            <li><a href="#services">Xidmətlər</a></li>
-            <li><a href="#contact">Əlaqə</a></li>
-        </ul>
-    </div>
+  <nav class="desktop-menu">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <!-- HERO BÖLMƏSİ -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <span class="badge">🚀 Gələcəyin Texnologiyaları</span>
-            <h1>Rəqəmsal Dünyada <span class="text-gradient">İnnovasiya</span></h1>
-            <p>Daha müasir, sürətli və peşəkar veb həllər ilə layihələrinizi növbəti səviyyəyə qaldırın.</p>
-            <div class="hero-btns">
-                <a href="#services" class="btn btn-primary">Kəşf Et</a>
-                <a href="#contact" class="btn btn-outline">Bizimlə Əlaqə</a>
-            </div>
-        </div>
-    </section>
+  <div class="nav-actions">
+    <button id="theme-toggle">🌙</button>
+    <button class="menu-btn">☰</button>
+  </div>
+</header>
 
-    <!-- XİDMƏTLƏR VƏ YA HAQQIMIZDA -->
-    <section id="services">
-        <h2>Xidmətlərimiz</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-code"></i></div>
-                <h3>Veb Proqramlaşdırma</h3>
-                <p>Müasir texnologiyalarla sürətli, responsiv və SEO-dostu veb saytların hazırlanması.</p>
-                <span class="read-meta">Ətraflı oxu &rarr;</span>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
-                <h3>Kibertəhlükəsizlik</h3>
-                <p>Sistemlərinizin təhlükəsizliyinin təmin olunması və zəif nöqtələrin analizi.</p>
-                <span class="read-meta">Ətraflı oxu &rarr;</span>
-            </div>
-            <div class="card">
-                <div class="card-icon"><i class="fas fa-brain"></i></div>
-                <h3>Süni İntellekt</h3>
-                <p>Proseslərin avtomatlaşdırılması və intellektual həllərin tətbiqi.</p>
-                <span class="read-meta">Ətraflı oxu &rarr;</span>
-            </div>
-        </div>
-    </section>
+<main>
 
-    <!-- RƏHBƏR KARTI -->
-    <section id="about">
-        <div class="owner-card">
-            <div class="owner-info">
-                <span class="badge">Platforma Rəhbəri</span>
-                <h2>Nail Mammadov</h2>
-                <p>SyntaxVirtual-ın qurucusu. Veb texnologiyaları, kibertəhlükəsizlik və süni intellekt sahələrində layihələr həyata keçirir.</p>
-                <div class="socials">
-                    <a href="https://github.com/Naill-dev" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/nail-məmmədov-4a1b21394" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="hero" class="hero">
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2026 <strong>SyntaxVirtual</strong>. Bütün hüquqlar Nail Mammadov tərəfindən qorunur.</p>
-        </div>
-    </footer>
+<div class="hero-left">
 
-    <!-- CDN Scriptlər: Particles.js, GSAP və ScrollTrigger -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    
-    <!-- Əsas JavaScript faylınız -->
-    <script src="script.js"></script>
+<div class="badge">
+AI • Frontend • Cyber Security
+</div>
+
+<h1>
+Building the Future with
+<span>SyntaxVirtual</span>
+</h1>
+
+<p>
+Modern web experiences inspired by Vercel, FlyRank and Stripe.
+Fast, responsive and premium interfaces.
+</p>
+
+<div class="hero-buttons">
+<a href="#projects" class="btn primary">Explore</a>
+<a href="#contact" class="btn secondary">Contact</a>
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="hero-card">
+<h3>Premium UI</h3>
+<p>Glassmorphism • GSAP • Glow • Motion</p>
+</div>
+
+<div class="hero-card">
+<h3>Performance</h3>
+<p>Fast loading & responsive architecture</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="services" class="section">
+<h2>Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Frontend Development</h3>
+<p>Responsive and modern websites.</p>
+</div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>Security audits and consulting.</p>
+</div>
+
+<div class="card">
+<h3>Artificial Intelligence</h3>
+<p>AI integrations and automation.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<div class="about-card">
+
+<h2>Nail Mammadov</h2>
+
+<p>
+Founder of SyntaxVirtual.
+Building modern digital products inspired by leading technology companies.
+</p>
+
+</div>
+
+</section>
+
+<footer id="contact">
+<p>© 2026 SyntaxVirtual. All rights reserved.</p>
+</footer>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
